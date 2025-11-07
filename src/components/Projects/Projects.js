@@ -5,17 +5,17 @@ import "./Projects.css"
 export default function Projects() {
   const projects = [
     {
-      name: "SoftNest - Fullstack GitHub Clone",
-      description: " A fullstack GitHub clone with user authentication, repository management, and collaborative features, made specially for students and universities.",
+      name: "SoftNest - Fullstack App Store and projects showcase",
+      description: " A fullstack App store with user authentication, repository management, and collaborative features, made specially for students and universities.",
       tech: ["Next.js", "Node.js", "PostgreSQL", "EXPRESSJS"],
       github: "https://github.com/sadaouikhaled2024-git/Softnest",
     },
     {
-      name: "Task Management App",
-      description: "Collaborative project management tool ",
-      tech: ["React", "HTML", "CSS"],
+      name: "Student and teacher communication platform",
+      description: "A fullstack communication hub connecting teachersand students with full real time massaging, posts and academic planning ",
+      tech: ["React", "HTML", "CSS","MongoDB","Web sockets","ExpressJS"],
       github: "https://github.com",
-      demo: "https://demo.com",
+      demo: "https://echo-estin.vercel.app/",
     },
     {
       name: "Festival Blog",
