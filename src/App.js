@@ -32,7 +32,7 @@ function App() {
 
     window.addEventListener("keydown", handleKeyDown)
     return () => window.removeEventListener("keydown", handleKeyDown)
-  }, [])
+  })
 
   return (
     <div className="portfolio">
