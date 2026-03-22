@@ -20,7 +20,7 @@ export default function EasterEgg({ active }) {
             🚀
           </motion.div>
           <motion.p initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} className="easter-egg-text">
-            Code Konami activé! 🎮
+            Decouvrez ma page insta: @degital_auroras ! y a rien de special ! 🚀
           </motion.p>
         </motion.div>
       )}

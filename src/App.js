@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import Navigation from "./components/Navigation/Navigation"
 import Hero from "./components/Hero/Hero"
 import Projects from "./components/Projects/Projects"
@@ -12,24 +12,27 @@ import EasterEgg from "./components/EasterEgg/EasterEgg"
 import PixelBlast from './components/PixelBlast.js';
 function App() {
   const [easterEggActive, setEasterEggActive] = useState(false)
-  const [konamiSequence, setKonamiSequence] = useState([]) // ← C’est ça qu’il manquait 🔥
+  const konamiSequence = useRef([]) 
 
-  const konamiCode = ["KeyK", "KeyH", "KeyA", "KeyL", "KeyE", "KeyD"]
+  const konamiCode = ["KeyK", "KeyH", "KeyQ", "KeyL", "KeyE", "KeyD"]
 
   useEffect(() => {
     const handleKeyDown = (e) => {
-      const newSequence = [...konamiSequence, e.code].slice(-6)
-      setKonamiSequence(newSequence)
-
-      if (newSequence.join(",") === konamiCode.join(",")) {
-        setEasterEggActive(true)
-        setTimeout(() => setEasterEggActive(false), 3000)
-      }
-    }
+  
+  konamiSequence.current = [...konamiSequence.current, e.code].slice(-6)
+ console.log("sequence:", konamiSequence.current.join(","))
+  console.log("target:  ", konamiCode.join(","))
+  
+  if (konamiSequence.current.join(",") === konamiCode.join(",")) {
+    setEasterEggActive(true)
+    console.log("Konami code activated!")
+    setTimeout(() => setEasterEggActive(false), 3000)
+  }
+}
 
     window.addEventListener("keydown", handleKeyDown)
     return () => window.removeEventListener("keydown", handleKeyDown)
-  }, [konamiSequence])
+  }, [])
 
   return (
     <div className="portfolio">
