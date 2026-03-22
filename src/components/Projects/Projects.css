@@ -36,6 +36,7 @@
   border-radius: 12px;
   padding: 24px;
   transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
 }
 
 .project-card:hover {
@@ -63,14 +64,83 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  gap: 16px;
   margin-bottom: 12px;
 }
 
 .project-name {
   font-size: 20px;
-  
   margin: 0;
   transition: color 0.3s ease;
+}
+
+.dev-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(96, 165, 250, 0.1));
+  border-radius: 8px;
+  border: 2px dashed rgba(168, 85, 247, 0.3);
+}
+
+.dev-animation {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.zzz {
+  font-size: 48px;
+  font-weight: bold;
+  color: #5563f7;
+  opacity: 0.7;
+  animation: sleeping 1.8s ease-in-out infinite;
+}
+
+.zzz:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.zzz:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.zzz:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.zzz:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.zzz:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+
+.dev-text {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+@keyframes sleeping {
+  0%, 100% {
+    opacity: 0.4;
+    transform: translateY(0) scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-16px) scale(1);
+  }
+}
+
+.project-period {
+  font-size: 14px;
+  color: #a78bfa;
+  margin: 6px 0 0 0;
 }
 
 
@@ -78,6 +148,7 @@
 .project-links {
   display: flex;
   gap: 8px;
+  flex-shrink: 0;
 }
 
 .project-link {
@@ -90,6 +161,97 @@
 
 .project-link:hover {
   color: #ffffff;
+}
+
+.project-screenshot-container {
+  margin-bottom: 16px;
+}
+
+.project-screenshot-slider {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 250px;
+  background-color: #111827;
+}
+
+.screenshot-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-card:hover .screenshot-image {
+  opacity: 0.95;
+}
+
+.slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  opacity: 0;
+}
+
+.project-screenshot-slider:hover .slider-button {
+  opacity: 0.6;
+}
+
+.slider-button:hover {
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 1;
+}
+
+.slider-button-prev {
+  left: 8px;
+}
+
+.slider-button-next {
+  right: 8px;
+}
+
+.screenshot-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  opacity: 0.5;
+  padding: 12px 0;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4b5563;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  opacity: 0.5;
+}
+
+.screenshot-dots:hover .dot {
+  opacity: 0.65;
+}
+
+.dot:hover {
+  opacity: 1 !important;
+  background: #6b7280;
+}
+
+.dot.active {
+  opacity: 1;
+  background: #60a5fa;
+  width: 24px;
+  border-radius: 4px;
 }
 
 .project-description {

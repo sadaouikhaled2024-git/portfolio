@@ -1,7 +1,7 @@
 "use client"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion, useScroll, useTransform } from "motion/react"
 import "./Hero.css"
-
+import DecryptedText from "../Decrypt-text"
 export default function Hero() {
   const { scrollY } = useScroll()
   const y1 = useTransform(scrollY, [0, 300], [0, 200])
@@ -17,54 +17,91 @@ export default function Hero() {
         <div className="hero-blob hero-blob-2" />
       </motion.div>
     
-      <div className="hero-content">
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+      <div className="hero-container">
+        <motion.div 
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="hero-image-section"
+        >
+          <img src="/screenshots/me.jpeg" alt="Khaled Sadaoui" className="hero-image" />
+        </motion.div>
+
+        <motion.div 
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="hero-subtitle-1"
+          className="hero-content"
         >
-          Welcome, I'm 
-        </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="hero-subtitle"
+          >
+            <div style={{ marginTop: '4rem' }}>
+  <DecryptedText
+  text="Bonjour, je suis"
+  animateOn="view"
+  revealDirection="start"
+  sequential
+  speed={50}
+  useOriginalCharsOnly={false}
+/>
+</div>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="hero-title"
-        >
-          Khaled Sadaoui
-        </motion.h1>
+          </motion.p>
 
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="hero-subtitle-2"
-        >
-         Full stack developper
-        </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="hero-title"
+          >
+           <div style={{ marginTop: '4rem' }}>
+  <DecryptedText
+  text="Khaled Sadaoui"
+  animateOn="view"
+  speed={125}
+  revealDirection="start"
+  sequential
+  useOriginalCharsOnly={false}
+/>
+</div>
+          </motion.h1>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          <button onClick={() => scrollToSection("projects")} className="hero-cta">
-            View My Work
-          </button>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="hero-subtitle"
+          >
+            Développeur Full-Stack | Étudiant en Informatique
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="hero-description"
+          >
+            Passionné par la programmation avec une prédilection pour les codes denses, structurés et bien commentés. À la recherche d'une alternance en développement logiciel.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="hero-buttons"
+          >
+            <button onClick={() => scrollToSection("projects")} className="hero-cta">
+              Voir mes projets
+            </button>
+          </motion.div>
         </motion.div>
       </div>
 
-      <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-        className="hero-scroll-indicator"
-      >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <polyline points="6,9 12,15 18,9"></polyline>
-        </svg>
-      </motion.div>
+      
     </section>
   )
 }

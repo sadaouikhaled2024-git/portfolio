@@ -115,11 +115,24 @@
   align-items: center;
   gap: 16px;
   color: #d1d5db;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+  color: #60a5fa;
+  transform: translateX(4px);
 }
 
 .contact-link svg {
   color: #60a5fa;
   flex-shrink: 0;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover svg {
+  color: #a855f7;
 }
 
 .easter-egg-hint {
