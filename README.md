@@ -1,12 +1,20 @@
-# Getting Started with Create React App
+# Mon Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Un portfolio moderne et interactif construit avec **React**, présentant une expérience utilisateur fluide avec des animations avancées et des effets visuels captivants.
 
-## Available Scripts
+##  Caractéristiques principales
 
-In the project directory, you can run:
+-  **Design moderne** avec animations fluides utilisant Framer Motion
+-  **Navigation intuitive** et responsive
+-  **Responsive design** - fonctionne sur tous les appareils  
+-  **Formulaire de contact** intégré avec EmailJS
+-  **Easter Egg** - Easter Egg secret avec Konami code (K-H-Q-L-E-D)
+-  **Effets visuels avancés** avec Three.js et PixelBlast
+-  **Animations de texte décrypté** pour un effet immersif
+-  **Portfolio de projets** avec screenshots et descriptions
+-  **Section compétences** organisée par domaine
 
-### `npm start`
+## Installation et Déploiement
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
