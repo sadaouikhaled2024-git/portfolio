@@ -45,7 +45,7 @@ export default function Projects() {
       description: "Projet collaboratif d'une plateforme académique de gestion de petites annonces pour étudiants.",
       tech: ["Next.js", "TypeScript", "Tailwind CSS", "Express.js", "MongoDB","REST API"],
       github: "https://github.com/sadaouikhaled2024-git/Ccarree",
-      demo: "https://demo.com",
+      demo: "https://ccarre-frontend.vercel.app",
       inDevelopment: false,
       screenshots: [
         "/screenshots/ccarre1.png",
