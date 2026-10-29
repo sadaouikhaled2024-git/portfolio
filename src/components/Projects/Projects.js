@@ -44,13 +44,14 @@ export default function Projects() {
       period: "",
       description: "Projet collaboratif d'une plateforme académique de gestion de petites annonces pour étudiants.",
       tech: ["Next.js", "TypeScript", "Tailwind CSS", "Express.js", "MongoDB","REST API"],
-      github: "https://github.com",
+      github: "https://github.com/sadaouikhaled2024-git/Ccarree",
       demo: "https://demo.com",
-      inDevelopment: true,
+      inDevelopment: false,
       screenshots: [
-        "https://via.placeholder.com/600x400?text=Ccarée+1",
-        "https://via.placeholder.com/600x400?text=Ccarée+2",
-        "https://via.placeholder.com/600x400?text=Ccarée+3",
+        "/screenshots/ccarre1.png",
+        "/screenshots/ccarre2.png",
+        "/screenshots/ccarre3.png",
+        "/screenshots/ccarre4.png"
       ],
     },
     {
@@ -95,7 +96,7 @@ export default function Projects() {
           viewport={{ once: true }}
           className="projects-header"
         >
-          <h2 className="projects-title">Expérience Professionnelle</h2>
+          <h2 className="projects-title">Expériences & projets</h2>
           <p className="projects-subtitle">
             Mes projets et expériences en développement web fullstack
           </p>

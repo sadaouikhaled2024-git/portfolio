@@ -41,7 +41,7 @@ export default function Hero() {
           >
             <div style={{ marginTop: '4rem' }}>
   <DecryptedText
-  text="Bonjour, je suis"
+  text="Bonjour, je m'appelle"
   animateOn="view"
   revealDirection="start"
   sequential
@@ -59,14 +59,7 @@ export default function Hero() {
             className="hero-title"
           >
            <div style={{ marginTop: '4rem' }}>
-  <DecryptedText
-  text="Khaled Sadaoui"
-  animateOn="view"
-  speed={125}
-  revealDirection="start"
-  sequential
-  useOriginalCharsOnly={false}
-/>
+  Khaled Sadaoui
 </div>
           </motion.h1>
 
@@ -76,7 +69,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="hero-subtitle"
           >
-            Développeur Full-Stack | Étudiant en Informatique
+            Etudiant en L3 MIAGE à l'université d'Aix-Marseille
           </motion.p>
 
           <motion.p
@@ -85,7 +78,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="hero-description"
           >
-            Passionné par la programmation avec une prédilection pour les codes denses, structurés et bien commentés. À la recherche d'une alternance en développement logiciel.
+            J’ai réalisé plusieurs projets de bout en bout, en individuel et en équipe. Je recherche un stage en développement logiciel pour mettre mes compétences techniques au service de projets concrets
           </motion.p>
 
           <motion.div

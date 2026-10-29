@@ -5,16 +5,16 @@ import "./About.css"
 export default function About() {
   const sections = [
     {
-      title: "Past",
-      content: "Quand je ne code pas, je démonte des vélos, powerlifting du coté, ou je compare des specs techniques que je n'achèterai probablement jamais. J'ai commencé à coder en ESTIN, en explorant les bases du développement web à travers des projets personnels et des tutoriels en ligne. Cette passion m'a conduit à approfondir mes connaissances et à acquerir une solide expérience pratique."
+      title: "Passée",
+      content: "Mon parcours professionnel a débuté en Algérie, après l’obtention de mon baccalauréat, lorsque j’ai intégré l’École nationale supérieure d’informatique. Dès ma première année, j’ai suivi une formation en ligne en développement front-end, ce qui m’a permis d’acquérir mes premières compétences en développement web. J’ai ensuite réalisé mon premier projet informatique en équipe dans le cadre de ma soutenance de classe préparatoire, une expérience qui m’a permis de mettre en pratique mes connaissances et de découvrir le travail collaboratif dans un contexte de développement."
     },
     {
-      title: "Present",
-      content: "Aujourd'hui je suis un developpeur web junior, je construis des apps complètes, du front au back, avec le même état d'esprit : comprendre comment ça marche, et le faire bien, apprendre de mes erreurs, et surtout, kifer en codant des sites pour mes amis et des projets académiques. J'aime les défis techniques et la satisfaction de voir une idée prendre vie à travers le code."
+      title: "Présent",
+      content: "Aujourd’hui, je poursuis mon parcours en France, à Aix-Marseille Université, où je suis étudiant en troisième année de licence MIAGE (Méthodes Informatiques Appliquées à la Gestion des Entreprises). Cette formation me permet d’approfondir mes compétences techniques en développement informatique tout en développant mes connaissances en gestion de projet et en systèmes d’information. En parallèle, je continue à travailler sur des projets personnels et collaboratifs, notamment dans le développement web full-stack, afin de consolider mes acquis et de me préparer à intégrer le monde professionnel. "
     },
     {
       title: "Future",
-      content: "Demain, je veux pousser ça encore plus loin, vers l'IA. Pas juste l'utiliser, mais comprendre ce qu'il y a dedans, construire des modèles, jouer avec les données, entraîner des trucs et voir ce qui sort. J'ai déjà commencé à creuser: les maths derrière, les architectures, comment ça pense. C'est le chemin où je veux aller, et je sais exactement pourquoi."
+      content: "À court terme, mon objectif est de décrocher un stage de fin de L3 MIAGE afin de mettre en pratique les compétences acquises au cours de ma formation et de découvrir davantage le fonctionnement d’une équipe informatique en entreprise. Je souhaite participer à des projets concrets, notamment en développement web et en systèmes d’information, tout en développant mes compétences techniques et professionnelles. Cette première expérience en entreprise constituera une étape importante dans la préparation de mon projet de poursuite d’études en alternance pendant mon master MIAGE."
     }
   ]
 
@@ -38,7 +38,7 @@ export default function About() {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
                 className="triangle-section"
-                style={{ width: `${100 - index * 25}%` }}
+                style={{ width: `${100 - index * 10}%` }}
               >
                 <h3 className="section-title">{section.title}</h3>
                 <p className="section-content">{section.content}</p>
