@@ -28,7 +28,7 @@ export default function About() {
           viewport={{ once: true }}
           className="about-content"
         >
-          <h2 className="about-title">À propos de moi</h2>
+          <h2 className="about-title">Pitch</h2>
           <div className="triangle-sections">
             {sections.map((section, index) => (
               <motion.div

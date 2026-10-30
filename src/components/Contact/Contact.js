@@ -33,7 +33,7 @@ export default function Contact() {
           className="contact-header"
         >
           <h2 className="contact-title">Travaillons ensemble</h2>
-          <p className="contact-subtitle">Vous avez un projet en tête? Discutez de la façon dont nous pouvons donner vie à vos idées.</p>
+          <p className="contact-subtitle">Vous avez un projet en tête ou une opportunité à me proposer ?</p>
         </motion.div>
 
         <div className="contact-content">
