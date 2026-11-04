@@ -9,6 +9,7 @@ import Skills from "./components/Skills/Skills"
 import Contact from "./components/Contact/Contact"
 import Footer from "./components/Footer/Footer"
 import EasterEgg from "./components/EasterEgg/EasterEgg"
+import { Analytics } from "@vercel/analytics/react"
 import PixelBlast from './components/PixelBlast.js';
 function App() {
   const [easterEggActive, setEasterEggActive] = useState(false)
@@ -59,6 +60,7 @@ function App() {
     transparent
   />
 </div>
+<Analytics/>
       <EasterEgg active={easterEggActive} />
       <Navigation />
       <Hero />
