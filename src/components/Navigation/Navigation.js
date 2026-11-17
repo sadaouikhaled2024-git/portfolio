@@ -21,7 +21,7 @@ export default function Navigation() {
           <span className="ltr">l</span>
           <span className="ltr">e</span>
           <span className="ltr">d</span>
-          <span className="ltr"> </span>
+          
           <span className="ltr">S</span>
           <span className="ltr">a</span>
           <span className="ltr">d</span>

@@ -4,14 +4,14 @@
   left: 0;
   right: 0;
   z-index: 40;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(209, 207, 207, 0.53);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid #374151;
+  border-bottom: 1px solid #a8a8a8;
 }
 @keyframes bouncing {
   0%, 100% {
-    opacity: 0.6;
-    transform: translateY(0) scale(0.95);
+    opacity: 0.9;
+    transform: translateY(0) scale(0.999);
   }
   50% {
     opacity: 1;
@@ -80,7 +80,7 @@
 .nav-logo {
   font-size: 20px;
   font-weight: bold;
-  background: linear-gradient(135deg, #60a5fa, #a855f7);
+  background: linear-gradient(135deg, #2455D6, #F04B36);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -90,11 +90,11 @@
   display: inline-block;
   font-size: 24px;
   font-weight: bold;
-  background: linear-gradient(135deg, #60a5fa, #a855f7);
+  background: linear-gradient(135deg, #00030a, #5b5b5b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: bouncing 2s ease-in-out infinite;
+  animation: bouncing 2.5s ease-in-out infinite;
 }
 .nav-links {
   display: none;
@@ -104,14 +104,14 @@
 .nav-link {
   background: none;
   border: none;
-  color: #ffffff;
+  color: #535353;
   cursor: pointer;
   font-size: 16px;
   transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-  color: #60a5fa;
+  color: #2455D6;
 }
 
 @media (min-width: 768px) {

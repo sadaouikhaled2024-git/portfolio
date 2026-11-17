@@ -31,7 +31,7 @@
   height: auto;
   max-width: 400px;
   border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 60px rgba(23, 23, 23, 0.3);
   object-fit: cover;
 }
 
@@ -52,7 +52,7 @@
   left: 80px;
   width: 288px;
   height: 288px;
-  background-color: rgb(59, 130, 246);
+  background-color: rgb(36, 85, 214);
 }
 
 .hero-blob-2 {
@@ -60,7 +60,7 @@
   right: 80px;
   width: 384px;
   height: 384px;
-  background-color: rgba(169, 85, 247, 0.212);
+  background-color: rgba(240, 75, 54, 0.212);
 }
 
 .hero-content {
@@ -74,16 +74,16 @@
 }
 
 .hero-subtitle {
-  
-  font-size: 1.3rem;
-  color: #e3e4e6;
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: #434343;
   margin: 3;
 }
 
 .hero-description {
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.6;
-  color: #ebeced;
+  color: #464646;
   margin: 0;
   max-width: 500px;
 }
@@ -95,10 +95,10 @@
 }
 
 .hero-title {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: bold;
   margin-bottom: 0;
-  background: linear-gradient(135deg, #ffffff, #bfdbfe, #c4b5fd);
+  background: linear-gradient(135deg, #000000, #4c4b4b, #690e0e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -121,7 +121,7 @@
   left: 80px;
   width: 288px;
   height: 288px;
-  background-color: rgba(59, 130, 246, 1);
+  background-color: rgba(36, 85, 214, 1);
 }
 
 .hero-blob-2 {
@@ -129,11 +129,11 @@
   right: 80px;
   width: 384px;
   height: 384px;
-  background-color: rgba(169, 85, 247, 0.212);
+  background-color: rgba(240, 75, 54, 0.212);
 }
 
 .hero-cta {
-  background: linear-gradient(45deg, #628EFF, #8740CD, #580475);
+  background-color: #3c6cda;
   color: white;
   margin-top: 20px;
   padding: 12px 32px;
@@ -142,14 +142,14 @@
   font-weight: 600;
   border: none;
   cursor: pointer;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 25px rgba(23, 23, 23, 0.3);
   transition: all 0.3s ease;
 }
 
 .hero-cta:hover {
-  background: linear-gradient(45deg, #3962c8, #5f2698, #580475);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-  transform: translateY(-2px);
+  background-color: #2455D6;
+  box-shadow: 0 15px 35px rgba(23, 23, 23, 0.4);
+  transform: translateY(-1px);
 }
 
 .hero-scroll-indicator {
@@ -157,7 +157,7 @@
   bottom: 32px;
   left: 50%;
   transform: translateX(-50%);
-  color: #9ca3af;
+  color: #F5F0E8;
 }
 
 @media (max-width: 768px) {

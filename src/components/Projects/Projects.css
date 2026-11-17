@@ -11,14 +11,14 @@
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 16px;
-  background: linear-gradient(135deg, #60a5fa, #a855f7);
+  background: linear-gradient(135deg, #0349fb, #626161);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .projects-subtitle {
-  color: #9ca3af;
+  color: #464646;
   font-size: 18px;
   max-width: 512px;
   margin: 0 auto;
@@ -31,34 +31,34 @@
 }
 
 .project-card {
-  background-color: rgba(17, 24, 39, 0.5);
-  border: 1px solid #374151;
+  background-color: rgba(207, 205, 205, 0.5);
+  border: 1px solid #a8a8a8;
   border-radius: 12px;
   padding: 24px;
   transition: all 0.3s ease;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(1px);
 }
 
 .project-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 40px rgba(105, 105, 105, 0.3);
 }
 
 .project-card:hover:nth-child(1){
-  border-color: #60a5fa;
-  color: #60a5fa;;
+  border-color: #2455D6;
+  color: #2455D6;;
 }
 .project-card:hover:nth-child(4) {
-  border-color: #60a5fa;
-  color: #60a5fa;;
+  border-color: #2455D6;
+  color: #2455D6;;
 }
 .project-card:hover:nth-child(2){
-  border-color: #a855f7;
-  color: #a855f7;
+  border-color: #F04B36;
+  color: #F04B36;
 }
 .project-card:hover:nth-child(3){
-  border-color: #a855f7;
-  color: #a855f7;
+  border-color: #F04B36;
+  color: #F04B36;
 }
 .project-header {
   display: flex;
@@ -80,9 +80,9 @@
   align-items: center;
   justify-content: center;
   min-height: 300px;
-  background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(96, 165, 250, 0.1));
+  background: linear-gradient(135deg, rgba(240, 75, 54, 0.1), rgba(36, 85, 214, 0.1));
   border-radius: 8px;
-  border: 2px dashed rgba(168, 85, 247, 0.3);
+  border: 2px dashed rgba(240, 75, 54, 0.3);
 }
 
 .dev-animation {
@@ -95,7 +95,7 @@
 .zzz {
   font-size: 48px;
   font-weight: bold;
-  color: #5563f7;
+  color: #2455D6;
   opacity: 0.7;
   animation: sleeping 1.8s ease-in-out infinite;
 }
@@ -120,7 +120,7 @@
 
 
 .dev-text {
-  color: #ffffff;
+  color: #5a5a5a;
   font-size: 16px;
   font-weight: 600;
   margin: 0;
@@ -139,7 +139,7 @@
 
 .project-period {
   font-size: 14px;
-  color: #a78bfa;
+  color: #F04B36;
   margin: 6px 0 0 0;
 }
 
@@ -152,7 +152,7 @@
 }
 
 .project-link {
-  color: #9ca3af;
+  color: #717070;
   padding: 8px;
   border-radius: 6px;
   transition: color 0.3s ease;
@@ -160,7 +160,7 @@
 }
 
 .project-link:hover {
-  color: #ffffff;
+  color: #000000;
 }
 
 .project-screenshot-container {
@@ -172,7 +172,7 @@
   border-radius: 8px;
   overflow: hidden;
   height: 250px;
-  background-color: #111827;
+  background-color: #171717;
 }
 
 .screenshot-image {
@@ -189,8 +189,8 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0);
-  color: white;
+  background: rgba(23, 23, 23, 0);
+  color: rgb(10, 10, 10);
   border: none;
   padding: 8px 12px;
   font-size: 18px;
@@ -206,7 +206,7 @@
 }
 
 .slider-button:hover {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(196, 195, 195, 0.7);
   opacity: 1;
 }
 
@@ -230,7 +230,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #4b5563;
+  background: #171717;
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -244,18 +244,18 @@
 
 .dot:hover {
   opacity: 1 !important;
-  background: #6b7280;
+  background: #F5F0E8;
 }
 
 .dot.active {
   opacity: 1;
-  background: #60a5fa;
+  background: #2455D6;
   width: 24px;
   border-radius: 4px;
 }
 
 .project-description {
-  color: #9ca3af;
+  color: #525251;
   margin-bottom: 16px;
   line-height: 1.6;
 }
@@ -267,8 +267,8 @@
 }
 
 .tech-badge {
-  background-color: #374151;
-  color: #d1d5db;
+  background-color: #adacac;
+  color: #F5F0E8;
   padding: 4px 12px;
   border-radius: 16px;
   font-size: 14px;

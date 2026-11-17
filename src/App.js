@@ -41,22 +41,22 @@ function App() {
 
 <div style={{ width: '100%', height: '100%', position: 'fixed',zIndex: -1,opacity: 0.6 }}>
   <PixelBlast
-    variant="square"
-    pixelSize={4}
-    color="#6100f3"
+    variant="circle"
+    pixelSize={5}
+    color="#686767"
     patternScale={4}
     patternDensity={0.8}
     pixelSizeJitter={0}
     enableRipples
-    rippleSpeed={0.9}
-    rippleThickness={0.12}
-    rippleIntensityScale={1.5}
+    rippleSpeed={10}
+    rippleThickness={0.1}
+    rippleIntensityScale={1}
     liquid={false}
     liquidStrength={0.12}
     liquidRadius={1.2}
     liquidWobbleSpeed={5}
-    speed={0.05}
-    edgeFade={0.25}
+    speed={1}
+    edgeFade={0.1}
     transparent
   />
 </div>
