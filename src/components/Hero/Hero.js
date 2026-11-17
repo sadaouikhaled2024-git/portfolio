@@ -6,10 +6,6 @@ export default function Hero() {
   const { scrollY } = useScroll()
   const y1 = useTransform(scrollY, [0, 300], [0, 200])
 
-  const scrollToSection = (sectionId) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" })
-  }
-
   return (
     <section id="hero" className="hero">
       <motion.div style={{ y: y1 }} className="hero-bg">
@@ -87,9 +83,9 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="hero-buttons"
           >
-            <button onClick={() => scrollToSection("projects")} className="hero-cta">
-              Voir mes projets
-            </button>
+            <a href="/CV_Khaled_Sadaoui.pdf" download className="hero-cta">
+              Télécharger mon CV
+            </a>
           </motion.div>
         </motion.div>
       </div>

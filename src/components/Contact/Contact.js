@@ -7,10 +7,10 @@ export default function Contact() {
   e.preventDefault()
 
   emailjs.sendForm(
-    "service_ekxdvja",     // Replace with your EmailJS service ID
-    "template_y9ci4en",    // Replace with your EmailJS template ID
+    "service_ekxdvja",     
+    "template_y9ci4en",    
     e.target,
-    "OKI2MO2-9hG_AyPcI"      // Replace with your EmailJS public key
+    "OKI2MO2-9hG_AyPcI"      
   )
   .then(() => {
     alert("Le message a été envoyé avec succès!")

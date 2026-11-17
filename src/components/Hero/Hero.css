@@ -17,6 +17,7 @@
   max-width: 1200px;
   margin: 0 auto;
   z-index: 10;
+  backdrop-filter: blur(1.5px);
 }
 
 .hero-image-section {
@@ -133,8 +134,10 @@
 }
 
 .hero-cta {
+  display: inline-block;
   background-color: #3c6cda;
   color: white;
+  text-decoration: none;
   margin-top: 20px;
   padding: 12px 32px;
   border-radius: 50px;

@@ -368,7 +368,7 @@ const PixelBlast = ({
       });
       renderer.domElement.style.width = '100%';
       renderer.domElement.style.height = '100%';
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
       container.appendChild(renderer.domElement);
       if (transparent) renderer.setClearAlpha(0);
       else renderer.setClearColor(0x000000, 1);
@@ -592,9 +592,14 @@ const PixelBlast = ({
     liquidWobbleSpeed,
     autoPauseOffscreen,
     variant,
-    color,
     speed
   ]);
+
+  useEffect(() => {
+    if (threeRef.current) {
+      threeRef.current.uniforms.uColor.value.set(color);
+    }
+  }, [color]);
 
   return (
     <div

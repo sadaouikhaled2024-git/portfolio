@@ -11,11 +11,43 @@ import Footer from "./components/Footer/Footer"
 import EasterEgg from "./components/EasterEgg/EasterEgg"
 import { Analytics } from "@vercel/analytics/react"
 import PixelBlast from './components/PixelBlast.js';
+
+const RED = [0xF0, 0x4B, 0x36]
+const BLUE = [0x24, 0x55, 0xD6]
+
+function interpolateColor(progress) {
+  const factor = (Math.sin(progress * Math.PI * 2) + 1) / 2
+  const color = RED.map((channel, index) =>
+    Math.round(channel + (BLUE[index] - channel) * factor),
+  )
+
+  return `#${color.map((channel) => channel.toString(16).padStart(2, "0")).join("")}`
+}
+
 function App() {
   const [easterEggActive, setEasterEggActive] = useState(false)
+  const [pixelBlastColor, setPixelBlastColor] = useState("#F04B36")
   const konamiSequence = useRef([]) 
 
   const konamiCode = ["KeyK", "KeyH", "KeyQ", "KeyL", "KeyE", "KeyD"]
+
+  useEffect(() => {
+    let animationFrame
+    const startTime = performance.now()
+    const duration = 5000
+    let lastUpdate = 0
+
+    const animateColor = (now) => {
+      if (now - lastUpdate >= 100) {
+        setPixelBlastColor(interpolateColor((now - startTime) / duration))
+        lastUpdate = now
+      }
+      animationFrame = requestAnimationFrame(animateColor)
+    }
+
+    animationFrame = requestAnimationFrame(animateColor)
+    return () => cancelAnimationFrame(animationFrame)
+  }, [])
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -42,10 +74,11 @@ function App() {
 <div style={{ width: '100%', height: '100%', position: 'fixed',zIndex: -1,opacity: 0.6 }}>
   <PixelBlast
     variant="circle"
-    pixelSize={5}
-    color="#686767"
-    patternScale={4}
-    patternDensity={0.8}
+    antialias={false}
+    pixelSize={8}
+    color={pixelBlastColor}
+    patternScale={8}
+    patternDensity={0.2}
     pixelSizeJitter={0}
     enableRipples
     rippleSpeed={10}
@@ -55,8 +88,8 @@ function App() {
     liquidStrength={0.12}
     liquidRadius={1.2}
     liquidWobbleSpeed={5}
-    speed={1}
-    edgeFade={0.1}
+    speed={0.1}
+    edgeFade={0}
     transparent
   />
 </div>
