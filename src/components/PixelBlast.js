@@ -328,6 +328,7 @@ const PixelBlast = ({
   const containerRef = useRef(null);
   const visibilityRef = useRef({ visible: true });
   const speedRef = useRef(speed);
+  const colorRef = useRef(color);
 
   const threeRef = useRef(null);
   const prevConfigRef = useRef(null);
@@ -375,7 +376,7 @@ const PixelBlast = ({
       const uniforms = {
         uResolution: { value: new THREE.Vector2(0, 0) },
         uTime: { value: 0 },
-        uColor: { value: new THREE.Color(color) },
+        uColor: { value: new THREE.Color(colorRef.current) },
         uClickPos: {
           value: Array.from({ length: MAX_CLICKS }, () => new THREE.Vector2(-1, -1))
         },
@@ -539,7 +540,7 @@ const PixelBlast = ({
       const t = threeRef.current;
       t.uniforms.uShapeType.value = SHAPE_MAP[variant] ?? 0;
       t.uniforms.uPixelSize.value = pixelSize * t.renderer.getPixelRatio();
-      t.uniforms.uColor.value.set(color);
+      t.uniforms.uColor.value.set(colorRef.current);
       t.uniforms.uScale.value = patternScale;
       t.uniforms.uDensity.value = patternDensity;
       t.uniforms.uPixelJitter.value = pixelSizeJitter;
@@ -596,6 +597,7 @@ const PixelBlast = ({
   ]);
 
   useEffect(() => {
+    colorRef.current = color;
     if (threeRef.current) {
       threeRef.current.uniforms.uColor.value.set(color);
     }
