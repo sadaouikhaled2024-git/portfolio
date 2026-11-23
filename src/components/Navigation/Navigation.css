@@ -114,6 +114,35 @@
   color: #2455D6;
 }
 
+.language-selector {
+  align-items: center;
+  color: #171717;
+  display: flex;
+  gap: 6px;
+  margin-left: 4px;
+}
+
+.language-option {
+  background: none;
+  border: 0;
+  border-radius: 4px;
+  color: #535353;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 5px 3px;
+}
+
+.language-option:hover,
+.language-option.active {
+  color: #2455D6;
+}
+
+.language-option:focus-visible {
+  outline: 2px solid #F04B36;
+  outline-offset: 3px;
+}
+
 @media (min-width: 768px) {
   .nav-links {
     display: flex;

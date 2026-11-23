@@ -1,42 +1,47 @@
 "use client"
-import { motion } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
+import { Server } from "lucide-react"
 import "./Skills.css"
+import { translations } from "../../i18n"
 
-export default function Skills() {
-  const skills = {
-    "Frontend": ["React.js", "Next.js", "TypeScript", "TailwindCSS", "CSS", "HTML", "Framer Motion","JavaScript"],
-    "Backend": ["Node.js", "Python", "Express.js", "RestAPI","JWT", "HuggingFace API", "Docker",],
-    "Base de données": ["PostgreSQL", "MongoDB", "Firebase", "Mongoose","Sequelize","nosql"],
-    "DevOps": [ "Vercel", "GitHub Actions","Fly.io", "Docker", "CI/CD"],
+export default function Skills({ language }) {
+  const t = translations[language].skills
+  const reducedMotion = useReducedMotion()
+  const skillGroups = {
+    frontend: [
+      { title: t.languages, skills: ["JavaScript", "TypeScript", "HTML", "CSS","Angular"] },
+      { title: t.frameworks, skills: ["React.js", "Next.js", "TailwindCSS", "Framer Motion"] },
+    ],
+    backend: [
+      { title: t.languages, skills: ["Python", "Java"] },
+      { title: t.frameworks, skills: ["Node.js", "Express.js", "REST API", "JWT", "HuggingFace API", "Spring Boot"] },
+    ],
+    database: [
+      { title: t.technologies, skills: ["PostgreSQL", "MongoDB", "Firebase", "Mongoose", "Sequelize"] },
+    ],
+    devops: [
+      { title: t.technologies, skills: ["Vercel", "GitHub Actions", "Fly.io", "Docker", "CI/CD"] },
+    ],
   }
 
   const getIcon = (category) => {
     const icons = {
-      "Frontend": (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      frontend: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
           <polyline points="16,18 22,12 16,6"></polyline>
           <polyline points="8,6 2,12 8,18"></polyline>
         </svg>
       ),
-      "Backend": (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Server">
-  <rect x="2" y="3" width="20" height="8" rx="2"/>
-  <rect x="2" y="13" width="20" height="8" rx="2"/>
-  <line x1="6" y1="7" x2="6.01" y2="7"/>
-  <line x1="6" y1="17" x2="6.01" y2="17"/>
-  <line x1="10" y1="7" x2="18" y2="7"/>
-  <line x1="10" y1="17" x2="18" y2="17"/>
-</svg>
-      ),
-      "Base de données": (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      backend: <Server size={24} aria-hidden="true" />,
+      database: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
           <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
           <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
           <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
         </svg>
       ),
-      "DevOps": (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      devops: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
           <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
         </svg>
       ),
@@ -44,38 +49,58 @@ export default function Skills() {
     return icons[category]
   }
 
+  const getLevelClass = (level) => {
+    if (level === "À l'aise" || level === "Comfortable") return "level-comfortable"
+    if (level === "En apprentissage" || level === "Learning") return "level-learning"
+    return "level-used"
+  }
+
   return (
     <section id="skills" className="skills section">
       <div className="container">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          initial={reducedMotion ? false : { opacity: 0, y: 50 }}
+          whileInView={reducedMotion ? undefined : { opacity: 1, y: 0 }}
+          transition={reducedMotion ? undefined : { duration: 0.8 }}
           viewport={{ once: true }}
           className="skills-header"
         >
-          <h2 className="skills-title">Compétences et Technologies</h2>
-          <p className="skills-subtitle">Outils et technologies que j'utilise pour donner vie aux idées</p>
+          <h2 className="skills-title">{t.title}</h2>
+          <p className="skills-subtitle">{t.subtitle}</p>
         </motion.div>
 
         <div className="skills-grid">
-          {Object.entries(skills).map(([category, techs], index) => (
+          {Object.entries(skillGroups).map(([category, groups], index) => (
             <motion.div
               key={category}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
+              initial={reducedMotion ? false : { opacity: 0, y: 50 }}
+              whileInView={reducedMotion ? undefined : { opacity: 1, y: 0 }}
+              transition={reducedMotion ? undefined : { duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
               className="skill-card"
             >
               <div className="skill-header">
                 <div className="skill-icon">{getIcon(category)}</div>
-                <h3 className="skill-category">{category}</h3>
+                <h3 className="skill-category">{t.categories[category]}</h3>
               </div>
               <div className="skill-list">
-                {techs.map((tech) => (
-                  <div key={tech} className="skill-item">
-                    {tech}
+                {groups.map((group) => (
+                  <div key={group.title} className="skill-group">
+                    <h4 className="skill-group-title">{group.title}</h4>
+                    {group.skills.map((tech) => {
+                      const level = t.levels[tech]
+                      return (
+                        <div key={tech} className="skill-item">
+                          <span>{tech}</span>
+                          <span
+                            className={`skill-level-badge ${getLevelClass(level)}`}
+                            aria-label={`${tech}: ${level}`}
+                          >
+                            {level}
+                          </span>
+                        </div>
+                      )
+                    })}
                   </div>
                 ))}
               </div>

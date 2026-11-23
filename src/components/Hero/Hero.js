@@ -2,7 +2,9 @@
 import { motion, useScroll, useTransform } from "motion/react"
 import "./Hero.css"
 import DecryptedText from "../Decrypt-text"
-export default function Hero() {
+import { translations } from "../../i18n"
+export default function Hero({ language }) {
+  const t = translations[language].hero
   const { scrollY } = useScroll()
   const y1 = useTransform(scrollY, [0, 300], [0, 200])
 
@@ -37,7 +39,7 @@ export default function Hero() {
           >
             <div style={{ marginTop: '4rem' }}>
   <DecryptedText
-  text="Bonjour, je m'appelle"
+  text={t.greeting}
   animateOn="view"
   revealDirection="start"
   sequential
@@ -65,7 +67,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="hero-subtitle"
           >
-            Etudiant en L3 MIAGE à l'université d'Aix-Marseille
+            {t.role}
           </motion.p>
 
           <motion.p
@@ -74,7 +76,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="hero-description"
           >
-            J’ai réalisé plusieurs projets de bout en bout, en individuel et en équipe. Je recherche un stage en développement logiciel pour mettre mes compétences techniques au service de projets concrets
+            {t.description}
           </motion.p>
 
           <motion.div
@@ -84,7 +86,7 @@ export default function Hero() {
             className="hero-buttons"
           >
             <a href="/CV_Khaled_Sadaoui.pdf" download className="hero-cta">
-              Télécharger mon CV
+              {t.cv}
             </a>
           </motion.div>
         </motion.div>

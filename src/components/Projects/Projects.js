@@ -2,8 +2,10 @@
 import { motion, AnimatePresence } from "framer-motion"
 import { useState } from "react"
 import "./Projects.css"
+import { translations } from "../../i18n"
 
-export default function Projects() {
+export default function Projects({ language }) {
+  const t = translations[language].projects
   const [screenshotIndices, setScreenshotIndices] = useState({})
 
   const goToScreenshot = (projectIndex, screenshotIndex) => {
@@ -26,23 +28,9 @@ export default function Projects() {
   }
   const projects = [
     {
-      name: "Softnest",
-      period: "",
-      description: "Projet académique - un clone de github pour les etudiants, avec des fonctionnalités de base pour la gestion de projets et de code.",
-      tech: ["React.js", "JavaScript", "CSS", "Express.js", "PostgreSQL","JWT"],
-      github: "https://github.com/sadaouikhaled2024-git/Softnest",
-      demo: "",
-      inDevelopment: false,
-      screenshots: [
-        "/screenshots/softnest1.png",
-        "/screenshots/softnest2.png",
-       
-      ],
-    },
-    {
       name: "Ccarrée",
-      period: "",
-      description: "Projet collaboratif d'une plateforme académique de gestion de petites annonces pour étudiants.",
+      period: "Feb 2026 - Apr 2026",
+      description: t.descriptions[1],
       tech: ["Next.js", "TypeScript", "Tailwind CSS", "Express.js", "MongoDB","REST API"],
       github: "https://github.com/sadaouikhaled2024-git/Ccarree",
       demo: "https://ccarre-frontend.vercel.app",
@@ -55,10 +43,25 @@ export default function Projects() {
       ],
     },
     {
+      name: "Game of Life",
+      period: "Jan 2026 - Fev 2026",
+      description: t.descriptions[0],
+      tech: ["Java", "Gradle"],
+      github: "https://github.com/sadaouikhaled2024-git/gameoflife",
+      
+      inDevelopment: false,
+      screenshots: [
+        "/screenshots/gameOfLife.png"
+       
+      ],
+    },
+    
+    
+    {
       name: "TokyoVibe - E-commerce Streetwear",
-      period: "",
-      description: "Site e-commerce streetwear avec déploiement professionnel et IA intégrée. Assistant IA via l'API HuggingFace pour guider l'expérience de personalisation. Déploiement containerisé avec Docker, hébergé sur Vercel et Fly.io.",
-      tech: ["Next.js", "TypeScript", "Tailwind CSS", "Express.js", "MongoDB", "Docker","HuggingFace API", "Vercel", "Fly.io"],
+      period: "Sep 2025 - Dec 2025",
+      description: t.descriptions[2],
+      tech: ["Next.js", "TypeScript", "Tailwind CSS", "Express.js", "MongoDB", "Docker","HuggingFace API", "Vercel", "Fly.io", "Hostinger"],
     github: "https://github.com/sadaouikhaled2024-git/tokyo-vibe",
       demo: "https://tokyovibe.shop",
       inDevelopment: false,
@@ -71,9 +74,9 @@ export default function Projects() {
     },
     {
       name: "Arseet - Plateforme e-commerce",
-      period: "",
-      description: "Premier projet e-commerce mené entièrement en solo, de la conception au déploiement. Intégration de services cloud : Cloudinary, Firebase Storage, SendGrid. Génération de factures PDF et emails transactionnels avec authentification sécurisée via JWT.",
-      tech: ["Next.js", "TypeScript", "Tailwind CSS", "Express.js", "MySQL", "Sequelize","Cloudinary", "Firebase Storage", "SendGrid", "PDFKit", "JWT"],
+      period: "Mai 2025 - Sep 2025",
+      description: t.descriptions[3],
+      tech: ["Next.js", "TypeScript", "Tailwind CSS", "Express.js", "MySQL", "Sequelize","Cloudinary", "Firebase Storage", "SendGrid", "JWT"],
       github: "https://github.com/sadaouikhaled2024-git",
       demo: "https://arseet.com",
       inDevelopment: false,
@@ -82,6 +85,19 @@ export default function Projects() {
         "/screenshots/arseet2.png",
         "/screenshots/arseet3.jpg",
         "/screenshots/arseet4.png",
+      ],
+    },{
+      name: "Softnest",
+      period: "Jan 2025 - Mars 2025",
+      description: t.descriptions[4],
+      tech: ["React.js", "JavaScript", "CSS", "Express.js", "PostgreSQL","JWT"],
+      github: "https://github.com/sadaouikhaled2024-git/Softnest",
+      demo: "",
+      inDevelopment: false,
+      screenshots: [
+        "/screenshots/softnest1.png",
+        "/screenshots/softnest2.png",
+       
       ],
     },
   ]
@@ -96,9 +112,9 @@ export default function Projects() {
           viewport={{ once: true }}
           className="projects-header"
         >
-          <h2 className="projects-title">Expériences & projets</h2>
+          <h2 className="projects-title">{t.title}</h2>
           <p className="projects-subtitle">
-            Mes projets et expériences en développement web fullstack
+            {t.subtitle}
           </p>
         </motion.div>
 
@@ -143,7 +159,7 @@ export default function Projects() {
                         <span className="zzz">.</span>
                         <span className="zzz">.</span>
                       </div>
-                      <p className="dev-text">En développement...</p>
+                      <p className="dev-text">{t.development}</p>
                     </div>
                   ) : (
                     <AnimatePresence mode="wait">
@@ -164,14 +180,14 @@ export default function Projects() {
                       <button 
                         className="slider-button slider-button-prev"
                         onClick={() => prevScreenshot(index, project.screenshots.length)}
-                        aria-label="Previous screenshot"
+                        aria-label={t.previous}
                       >
                         ❮
                       </button>
                       <button 
                         className="slider-button slider-button-next"
                         onClick={() => nextScreenshot(index, project.screenshots.length)}
-                        aria-label="Next screenshot"
+                        aria-label={t.next}
                       >
                         ❯
                       </button>
@@ -185,7 +201,7 @@ export default function Projects() {
                         key={dotIndex}
                         className={`dot ${(screenshotIndices[index] || 0) === dotIndex ? "active" : ""}`}
                         onClick={() => goToScreenshot(index, dotIndex)}
-                        aria-label={`Go to screenshot ${dotIndex + 1}`}
+                        aria-label={`${t.goTo} ${dotIndex + 1}`}
                       />
                     ))}
                   </div>

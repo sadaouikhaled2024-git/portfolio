@@ -74,10 +74,60 @@
   gap: 8px;
 }
 
+.skill-group + .skill-group {
+  border-top: 1px solid rgba(23, 23, 23, 0.2);
+  margin-top: 16px;
+  padding-top: 12px;
+}
+
+.skill-group-title {
+  color: #171717;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin: 0 0 4px;
+  text-transform: uppercase;
+}
+
 .skill-item {
-  color: #4e4e4e;
-  text-align: center;
-  padding: 4px 0;
+  align-items: center;
+  color: #171717;
+  display: flex;
+  font-size: 14px;
+  gap: 12px;
+  justify-content: space-between;
+  padding: 6px 0;
+}
+
+.skill-level-badge {
+  border-radius: 2px;
+  display: inline-block;
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.2;
+  padding: 4px 8px;
+}
+
+.level-used {
+  background: #007c0ea5;
+  color: #f3f3f3;
+}
+
+.level-comfortable {
+  background: #d8e2ff;
+  color: #171717;
+}
+
+.level-learning {
+  background: #b9b9b9;
+  color: #171717;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-card {
+    transition: none;
+  }
 }
 
 @media (min-width: 768px) {

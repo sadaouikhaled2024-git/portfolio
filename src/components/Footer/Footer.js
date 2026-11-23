@@ -1,10 +1,11 @@
 import "./Footer.css"
+import { translations } from "../../i18n"
 
-export default function Footer() {
+export default function Footer({ language }) {
   return (
     <footer className="footer">
       <div className="container">
-        <p className="footer-text">© 2024 Khaled Sadaoui. All rights reserved. Typez mon nom pour une surprise !</p>
+        <p className="footer-text">{translations[language].footer}</p>
       </div>
     </footer>
   )

@@ -26,10 +26,18 @@ function interpolateColor(progress) {
 
 function App() {
   const [easterEggActive, setEasterEggActive] = useState(false)
+  const [language, setLanguage] = useState(() => {
+    const savedLanguage = window.localStorage.getItem("portfolio-language")
+    return savedLanguage === "fr" || savedLanguage === "en" ? savedLanguage : "en"
+  })
   const [pixelBlastColor, setPixelBlastColor] = useState("#F04B36")
   const konamiSequence = useRef([]) 
 
   const konamiCode = ["KeyK", "KeyH", "KeyQ", "KeyL", "KeyE", "KeyD"]
+
+  useEffect(() => {
+    window.localStorage.setItem("portfolio-language", language)
+  }, [language])
 
   useEffect(() => {
     let animationFrame
@@ -95,13 +103,13 @@ function App() {
 </div>
 <Analytics/>
       <EasterEgg active={easterEggActive} />
-      <Navigation />
-      <Hero />
-      <Projects />
-      <About />
-      <Skills />
-      <Contact />
-      <Footer />
+      <Navigation language={language} setLanguage={setLanguage} />
+      <Hero language={language} />
+      <Projects language={language} />
+      <About language={language} />
+      <Skills language={language} />
+      <Contact language={language} />
+      <Footer language={language} />
     </div>
   )
 }

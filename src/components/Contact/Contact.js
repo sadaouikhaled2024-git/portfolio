@@ -2,7 +2,9 @@
 import { motion } from "framer-motion"
 import "./Contact.css"
 import emailjs from "@emailjs/browser"
-export default function Contact() {
+import { translations } from "../../i18n"
+export default function Contact({ language }) {
+  const t = translations[language].contact
   const handleSubmit = (e) => {
   e.preventDefault()
 
@@ -13,12 +15,12 @@ export default function Contact() {
     "OKI2MO2-9hG_AyPcI"      
   )
   .then(() => {
-    alert("Le message a été envoyé avec succès!")
+    alert(t.success)
     e.target.reset()
   })
   .catch((err) => {
     console.error(err)
-    alert("L'envoi du message a échoué.")
+    alert(t.failure)
   })
 }
 
@@ -32,8 +34,8 @@ export default function Contact() {
           viewport={{ once: true }}
           className="contact-header"
         >
-          <h2 className="contact-title">Travaillons ensemble</h2>
-          <p className="contact-subtitle">Vous avez un projet en tête ou une opportunité à me proposer ?</p>
+          <h2 className="contact-title">{t.title}</h2>
+          <p className="contact-subtitle">{t.subtitle}</p>
         </motion.div>
 
         <div className="contact-content">
@@ -45,17 +47,17 @@ export default function Contact() {
             className="contact-form-container"
           >
             <div className="contact-form-card">
-              <h3 className="form-title">Envoyer un message</h3>
+              <h3 className="form-title">{t.formTitle}</h3>
               <form onSubmit={handleSubmit} className="contact-form">
-                <input type="text" name="name" placeholder="Votre nom" className="form-input" required />
-                <input type="email" name="email" placeholder="Votre email" className="form-input" required />
-                <textarea placeholder="Votre message" name="message" rows="4" className="form-textarea" required></textarea>
+                <input type="text" name="name" placeholder={t.name} className="form-input" required />
+                <input type="email" name="email" placeholder={t.email} className="form-input" required />
+                <textarea placeholder={t.message} name="message" rows="4" className="form-textarea" required></textarea>
                 <button type="submit" className="form-submit">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <line x1="22" y1="2" x2="11" y2="13"></line>
                     <polygon points="22,2 15,22 11,13 2,9 22,2"></polygon>
                   </svg>
-                  Envoyer le message
+                  {t.send}
                 </button>
               </form>
             </div>
@@ -68,7 +70,7 @@ export default function Contact() {
             viewport={{ once: true }}
             className="contact-info"
           >
-            <h3 className="info-title">Nous contacter</h3>
+            <h3 className="info-title">{t.infoTitle}</h3>
             <div className="contact-links">
               <a href="mailto:sadaouikhaled2024@gmail.com" className="contact-link">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

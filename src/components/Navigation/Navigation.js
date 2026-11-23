@@ -1,8 +1,10 @@
 "use client"
 import { motion } from "framer-motion"
 import "./Navigation.css"
+import { translations } from "../../i18n"
 
-export default function Navigation() {
+export default function Navigation({ language, setLanguage }) {
+  const t = translations[language]
   const scrollToSection = (sectionId) => {
     let actualId = sectionId
     if (sectionId === "projets") actualId = "projects"
@@ -33,13 +35,34 @@ export default function Navigation() {
         <div className="nav-links">
           {["hero", "projets", "à-propos", "compétences", "contact"].map((section) => (
             <button key={section} onClick={() => scrollToSection(section)} className="nav-link">
-              {section === "hero" && "Accueil"}
-              {section === "projets" && "Projets"}
-              {section === "à-propos" && "À propos"}
-              {section === "compétences" && "Compétences"}
-              {section === "contact" && "Contact"}
+              {section === "hero" && t.nav.home}
+              {section === "projets" && t.nav.projects}
+              {section === "à-propos" && t.nav.about}
+              {section === "compétences" && t.nav.skills}
+              {section === "contact" && t.nav.contact}
             </button>
           ))}
+          <div className="language-selector" role="group" aria-label="Language selection">
+            <button
+              type="button"
+              className={`language-option ${language === "fr" ? "active" : ""}`}
+              onClick={() => setLanguage("fr")}
+              aria-label="Passer au français"
+              aria-pressed={language === "fr"}
+            >
+              FR
+            </button>
+            <span aria-hidden="true">|</span>
+            <button
+              type="button"
+              className={`language-option ${language === "en" ? "active" : ""}`}
+              onClick={() => setLanguage("en")}
+              aria-label="Switch to English"
+              aria-pressed={language === "en"}
+            >
+              EN
+            </button>
+          </div>
         </div>
       </div>
     </nav>
